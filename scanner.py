@@ -293,10 +293,3 @@ def export_csv(n_clicks):
     with data_lock: df=pd.DataFrame(open_ports_data)
     timestamp=datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     return dcc.send_data_frame(df.to_csv,f"network_report_{timestamp}.csv",index=False)
-
- # ----------------------------
- # RUN
- # ----------------------------
- if __name__ == "__main__":
-     threading.Thread(target=start_scan_loop, daemon=True).start()
-     app.run_server(host='0.0.0.0', port=8050, debug=False)
