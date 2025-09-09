@@ -1,0 +1,7 @@
+scapy
+dash
+plotly
+networkx
+pandas
+tqdm
+netifaces
